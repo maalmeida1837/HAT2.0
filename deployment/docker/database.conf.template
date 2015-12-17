@@ -5,7 +5,7 @@ devdb = {
     user = ${?POSTGRES_USER}
     password = ${?POSTGRES_PASSWORD}
     serverName = ${?POSTGRES_HOST}
-	portNumber = "5432"
+    portNumber = "5432"
   }
   numThreads = 3
 }
