@@ -144,7 +144,7 @@ trait Users extends HttpService with HatServiceAuthHandler with JwtTokenHandler 
     }
   }
 
-  private val standardTokenValidity = standardHours(2)
+  private val standardTokenValidity = standardHours(12)
   def getAccessToken = path("access_token") {
     // Any password-authenticated user (not only owner)
     userPassHandler { implicit user: User =>

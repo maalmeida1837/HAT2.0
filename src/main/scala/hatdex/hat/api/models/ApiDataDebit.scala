@@ -56,6 +56,7 @@ case class ApiDataDebitOut(
   name: String,
   startDate: LocalDateTime,
   endDate: LocalDateTime,
+  enabled: Option[Boolean],
   rolling: Boolean,
   sell: Boolean,
   price: Float,
@@ -69,7 +70,7 @@ object ApiDataDebitOut {
     apiBundleContextlessData: Option[ApiBundleContextlessData],
     apiBundleContextualData: Option[Seq[ApiEntity]]): ApiDataDebitOut = {
     new ApiDataDebitOut(Some(dataDebitRow.dataDebitKey), Some(dataDebitRow.dateCreated), Some(dataDebitRow.lastUpdated),
-      dataDebitRow.name, dataDebitRow.startDate, dataDebitRow.endDate, dataDebitRow.rolling, dataDebitRow.sellRent,
+      dataDebitRow.name, dataDebitRow.startDate, dataDebitRow.endDate, Some(dataDebitRow.enabled), dataDebitRow.rolling, dataDebitRow.sellRent,
       dataDebitRow.price, dataDebitRow.kind, apiBundleContextlessData, apiBundleContextualData)
   }
 }

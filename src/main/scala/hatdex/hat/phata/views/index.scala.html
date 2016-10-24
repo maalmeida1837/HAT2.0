@@ -33,14 +33,7 @@
     <script>
         $(".notable-item").click(function(){
             var id = $(".header-content", this).data("id");
-            var logged = $(".header-content .logged-time", this).data("logged");
-            var content = $(".notable-content", this).data("content");
-            console.log(id, logged, content);
-
-            var fullView = $("#notable-full-view");
-            $(".notable-id", fullView)[0].innerHTML = id;
-            $(".logged-time", fullView)[0].innerHTML = logged;
-            $(".notable-content", fullView)[0].innerHTML = content;
+            location.href = "/notables?id=" + id;
         })
     </script>
 }
